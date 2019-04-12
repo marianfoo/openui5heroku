@@ -1,0 +1,47 @@
+<mvc:View controllerName="sap.ui.demo.todo.controller.App" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+		  xmlns:unified="sap.ui.unified" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<VBox class="sapUiSmallMargin">
+							<PlanningCalendar viewKey='Week' id="PC1" startDate="{path: '/startDate'}" rows="{path: '/people'}" appointmentsVisualization="Filled"
+											  appointmentSelect="handleAppointmentSelect" intervalSelect="handleAppointmentAddWithContext">
+								<toolbarContent>
+									<Title text="Overview" titleStyle="H4"/>
+									<ToolbarSpacer/>
+									<Button id="addButton" icon="sap-icon://add" press="handleAppointmentCreate" tooltip="Add"/>
+									<Label text="Logged in as"/>
+									<Select id="userRole" change="handleRoleChange" selectedKey="admin" width="230px">
+										<items>
+											<core:Item key="admin" text="Admin"/>
+											<core:Item key="manager" text="Manager"/>
+											<core:Item key="donna" text="Donna Moore"/>
+										</items>
+									</Select>
+								</toolbarContent>
+								<rows>
+									<PlanningCalendarRow icon="{pic}" title="{name}" text="{role}"
+														 enableAppointmentsDragAndDrop="{path:'name', formatter:'.canModifyAppointments'}"
+														 enableAppointmentsResize="{path:'name', formatter:'.canModifyAppointments'}"
+														 enableAppointmentsCreate="{path:'name', formatter:'.canModifyAppointments'}" appointmentDrop="handleAppointmentDrop"
+														 appointmentDragEnter="handleAppointmentDragEnter" appointmentResize="handleAppointmentResize" appointmentCreate="handleAppointmentCreate"
+														 appointments="{path : 'appointments', templateShareable: 'true'}" intervalHeaders="{path: 'headers', templateShareable: 'true'}">
+										<appointments>
+											<unified:CalendarAppointment startDate="{start}" endDate="{end}" icon="{pic}" title="{title}" text="{info}" type="{type}"
+																		 tentative="{tentative}"></unified:CalendarAppointment>
+										</appointments>
+										<intervalHeaders>
+											<unified:CalendarAppointment startDate="{start}" endDate="{end}" icon="{pic}" title="{title}" type="{type}"></unified:CalendarAppointment>
+										</intervalHeaders>
+									</PlanningCalendarRow>
+								</rows>
+							</PlanningCalendar>
+						</VBox>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

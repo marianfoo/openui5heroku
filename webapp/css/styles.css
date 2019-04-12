@@ -1,0 +1,24 @@
+/* Enter your custom styles here */
+
+
+/*.sapMListTblNavCol,
+.sapMListTblCell {
+    vertical-align: middle;
+}*/
+
+.sapMPlanCal .sapMPlanCalRowHead .sapMSLIDescIcon .sapMSLIDiv,
+.sapMPlanCal .sapMPlanCalRowHead .sapMSLIImgIcon + .sapMSLIDiv {
+	box-sizing: border-box;
+	position: unset;
+	padding-left: calc(3.75rem);
+	width: 100%;
+}
+
+.sapMPlanCal .sapMPlanCalRowHead .sapMLIBContent {
+	position: unset;
+}
+
+.sapMListTblNavCol,
+.sapMListTblCell {
+	vertical-align: middle;
+}
