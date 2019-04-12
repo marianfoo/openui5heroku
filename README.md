@@ -1,7 +1,7 @@
 
 
 # Open UI5 Docker Heroku Example
-####App based on
+#### App based on
 > [OpenUI5](https://github.com/SAP/openui5) sample app using the [UI5 Tooling](https://github.com/SAP/ui5-tooling).
 
 Implementation of [Planning Calender](https://sapui5.hana.ondemand.com/#/entity/sap.m.PlanningCalendar) is shown
